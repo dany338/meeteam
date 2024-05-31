@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="#" target="blank"><img src="./public/images/logo.png" width="200" alt="Nest Logo" /></a>
+</p>
 
-## Getting Started
+# Descripción
 
-First, run the development server:
+## Correr en dev
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+1. Clonar el repositorio.
+2. Crear una copia del ```.env.template``` y renombrarlo a ```.env``` y cambiar las variables de entorno.
+3. Instalar dependencias ```npm install```
+4. Ejecutar el comando ```npm run dev``` para ejecutar aplicación en desarrollo
+5. Ejecutar estos comandos de Prisma
 ```
+npx prisma migrate dev
+npx prisma generate
+```
+6. Correr el seed de datos para poblar con datos de ejemplo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```shell
+# users, products, product_images
+npm run seed
+```
+7. Correr prisma studio para ver las tablas inicialmente de session en: http://localhost:5555/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+#Es una manera rapida de poder ver los registros creados, atraves del navegador y sirve para editar eliminar tambien en caso tal
+npx prisma studio
+```
+<p align="center">
+  <a href="#" target="blank"><img src="./public/images/tasks-prisma-studio.PNG" width="100%" alt="Prisma studio - table tasks" /></a>
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. Correr las migraciones de Primsa ```npx prisma migrate dev```
+6. Correr el proyecto ```npm run dev```
 
-## Learn More
+## Nota: Usuario por defecto para testear en desarrollo rol: user
+__usuario:__  test1@google.com
+__password:__ 123456
 
-To learn more about Next.js, take a look at the following resources:
+## Nota: Usuario por defecto para testear en desarrollo rol: admin
+__usuario:__  d.gallo@lucro-app.com
+__password:__ 123456
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Correr en prod
+```shell
+npm run build
+```
