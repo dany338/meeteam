@@ -9,31 +9,23 @@ import {
   CiShoppingBasket,
 } from "react-icons/ci";
 import { IoNotificationsSharp } from 'react-icons/io5';
-
-const getTotalCount = (cart: { [id: string]: number }): number => {
-  let items = 0;
-  Object.values(cart).forEach((value) => {
-    items += value as number;
-  });
-
-  return items;
-};
+import TimeFilter from '../time-filter/TimeFilter';
 
 export const TopMenu = () => {
-  const cookieStore = cookies();
-  const cart = JSON.parse(cookieStore.get("cart")?.value ?? "{}");
-
-  const totalItems = getTotalCount(cart);
+  const totalItems = 8;
 
   return (
-    <div className="bg-dashboard-gradient sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
+    <div className="bg-dashboard-gradient sticky z-10 top-0 h-16 border-b bg-gray-900 lg:py-2.5">
       <div className="px-6 flex items-center justify-between space-x-4">
-        <h5 hidden className="text-2xl text-gray-600 font-medium lg:block">
+        <h5 hidden className="text-2xl text-gray-300 font-medium lg:block">
           Dashboard Overview
         </h5>
         <button className="w-12 h-16 -mr-2 border-r lg:hidden">
           <CiMenuBurger size={30} />
         </button>
+        <div className="flex-1 flex justify-center">
+          <TimeFilter /> {/* Center the TimeFilter component */}
+        </div>
         <div className="flex space-x-2">
           <div hidden className="md:block">
             <div className="relative flex items-center text-gray-400 focus-within:text-cyan-400">

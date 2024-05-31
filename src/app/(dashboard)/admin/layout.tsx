@@ -10,7 +10,7 @@ export default async function AdminLayout({children}: {
   const userRoles = session?.user?.roles ?? ["client"];
 
   if ( userRoles.length && !userRoles.includes('admin') ) {
-    redirect('/login');
+    redirect('/api/auth/signin');
   }
 
   return (
