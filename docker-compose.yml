@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  meeteamDB:
+    image: postgres:15.3
+    container_name: meeteam-db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./meeteam:/var/lib/postgresql/data

@@ -40,7 +40,7 @@ __usuario:__  test1@google.com
 __password:__ 123456
 
 ## Nota: Usuario por defecto para testear en desarrollo rol: admin
-__usuario:__  d.gallo@lucro-app.com
+__usuario:__  dany338@gmail.com
 __password:__ 123456
 
 ## Correr en prod
